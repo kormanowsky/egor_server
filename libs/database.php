@@ -10,6 +10,8 @@ if(!function_exists("parse_args")){
     return $defaults;
   }
 }
+if(!function_exists("json_decode_object")){
+}
 /**
  * Database - СЂР°Р±РѕС‚Р° СЃ Р±Р°Р·РѕР№ РґР°РЅРЅС‹С…
  * @uses mysqli
