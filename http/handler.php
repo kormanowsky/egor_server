@@ -20,7 +20,7 @@ if(isset($_POST['new_place_submit'])){
   ");
   Database::insert([
     'table' => 'places',
-    'data => $_POST,
+    'data' => $_POST,
   ]);
 }
 ?>
