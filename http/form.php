@@ -3,7 +3,11 @@
   <body>
     <h1>Submit your place here</h1>
     <form method="POST" action="handler.php">
-      <label>Place name:<input type="text" name="name"></label>
-      <label>Place link:<input type="text" name="link"></label>
-      <label>Place location:<input type="text" name="location"></label>
-      
+      <label>Name:<input type="text" name="name"></label>
+      <label>Link:<input type="text" name="link"></label>
+      <label>Item:<input type="text" name="item"></label>
+      <label>Location:<input type="text" name="location"></label>
+      <input type="submit" name="new_place_submit" value="Submit place">
+    </form>
+  </body>
+</html>
