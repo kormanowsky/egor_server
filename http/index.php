@@ -1,3 +1,10 @@
+<?php
+require_once "../config.php";
+require_once "../libs/storage.php";
+require_once "../libs/events.php";
+require_once "../libs/database.php";
+Database::connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+?>
 <!DOCTYPE html>
 <html>
   <body>
