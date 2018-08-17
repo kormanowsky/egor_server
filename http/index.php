@@ -24,6 +24,6 @@
       <?php else: ?>
         <h3>There are no places</h3>
       <?php endif; ?>
-    <p><a href="create.php">Create your place</a></p>
+    <p><a href="submit.php">Submit your place</a></p>
   </body>
 </html>
