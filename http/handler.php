@@ -29,6 +29,11 @@ if(isset($_POST['new_place_submit'])){
   <html>
     <body>
       <h1>Thanks for submission!</h1>
+      <script>
+        setTimeout(function(){
+          window.location = "/";
+        }, 2000);
+      </script>
     </body>
   </html>
   <?php
