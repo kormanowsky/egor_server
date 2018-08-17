@@ -1,4 +1,15 @@
 <?php
+if(!function_exists("parse_args")){
+  function parse_args(array $defaults, array $args){
+    if(is_array($args)){
+        foreach($defaults as $key=>$value){
+            if(array_key_exists($key, $args))
+                $defaults[$key] = $args[$key];
+        }
+    }
+    return $defaults;
+  }
+}
 /**
  * Database - СЂР°Р±РѕС‚Р° СЃ Р±Р°Р·РѕР№ РґР°РЅРЅС‹С…
  * @uses mysqli
