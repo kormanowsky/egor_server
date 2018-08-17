@@ -8,6 +8,16 @@ if(isset($_POST['new_place_submit'])){
     $_POST[$k]=htmlspecialchars($v);
   }
   Database::connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+  Database::query("
+    CREATE TABLE IF NOT EXISTS `places` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `name` mediumtext NOT NULL,
+  `link` mediumtext NOT NULL,
+  `item` mediumtext NOT NULL,
+  `location` mediumtext NOT NULL,
+  PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1
+  ");
   Database::insert([
     'table' => 'places',
     'data => $_POST,
