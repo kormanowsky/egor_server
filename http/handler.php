@@ -38,6 +38,6 @@ if(isset($_POST['new_place_submit'])){
   </html>
   <?php
   }else{
-    header(“Location: /submit.php”);
+    header("Location: /submit.php");
   }
 ?>
