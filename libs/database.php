@@ -11,6 +11,29 @@ if(!function_exists("parse_args")){
   }
 }
 if(!function_exists("json_decode_object")){
+ function json_decode_array($array){
+  if(!is_array($array)) return $array;
+  foreach($array as $key=>$value){
+    if(is_string($value) && is_json($value)){
+      $value = json_decode($value, false, 512, JSON_BIGINT_AS_STRING);
+    }
+    if(is_array($value)){
+      $value = json_decode_array($value);
+    }else if(is_object($value)){
+      $value = json_decode_object($value);
+    }
+    $array[$key] = $value;
+  }
+  return $array;
+  }
+  function json_decode_object($object){
+    if(!is_object($object)) return $object;
+    $decoded = json_decode_array(get_object_vars($object));
+    foreach($decoded as $prop=>$value){
+      $object->$prop = $value;
+    }
+    return $object;
+  }
 }
 /**
  * Database - СЂР°Р±РѕС‚Р° СЃ Р±Р°Р·РѕР№ РґР°РЅРЅС‹С…
