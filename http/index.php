@@ -23,10 +23,10 @@ Database::connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
         ?>
         <tr>
           <td><a target="_blank" href="<?php echo $place->link; ?>"><?php echo $place->name;?></a></td>
-          <td></td>
-          <td></td>
+          <td><?php echo $place->item;?></td>
+          <td><?php echo $place->location;?></td>
         </tr>
-        <?php enforeach; ?>
+        <?php endforeach; ?>
       </table>
       <?php else: ?>
         <h3>There are no places</h3>
