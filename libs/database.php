@@ -10,6 +10,12 @@ if(!function_exists("parse_args")){
     return $defaults;
   }
 }
+if(!function_exists("is_json")){
+  function is_json(string $json){
+    $decoded = json_decode($json);
+    return json_last_error() === JSON_ERROR_NONE;
+  }
+}
 if(!function_exists("json_decode_object")){
  function json_decode_array($array){
   if(!is_array($array)) return $array;
