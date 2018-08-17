@@ -2,15 +2,16 @@
 <html>
   <body>
     <h1>List of places</h1>
-    <table>
+      <?php
+      $places = Database::select(["table"=>"places"]);
+      if($places): ?>
+      <table>
       <tr>
         <th>Name</th>
         <th>Item</th>
         <th>Location</th>
       </tr>
-      <?php
-      $places = Database::select(["table"=>"places"]);
-      if($places):
+        <?php 
         foreach($places as $place):
         ?>
         <tr>
@@ -23,3 +24,6 @@
       <?php else: ?>
         <h3>There are no places</h3>
       <?php endif; ?>
+    <p><a href="create.php">Create your place</a></p>
+  </body>
+</html>
